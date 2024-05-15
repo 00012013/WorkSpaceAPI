@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using WorkSpaceAPI.DBContexts;
+using WorkSpaceAPI.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppContexts>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("AppDB"))
             );
+
+builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
 
 var app = builder.Build();
 
