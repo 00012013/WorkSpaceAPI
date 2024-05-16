@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WorkSpaceAPI.Controllers.DTO;
-using WorkSpaceAPI.Model;
 using WorkSpaceAPI.Repository;
 
 namespace WorkSpaceAPI.Controllers
